@@ -11,19 +11,31 @@ const  tess = document.getElementById("test-tooltip");
 // const less = document.getElementsByClassName("dhix69tm");
 // const less = document.getElementsByClassName("wkznzc2l");
 
+// let scrpt =
+// `
+// <script>
+// function myConsole() {
+//   console.log("hello man world")
+// }
+// </script>
+// ` 
 let html =
 `
 <br>
 <div id="test-danish">
   <span id="test-tooltip" class="tooltiptext"> 
-    <button type="button" id="bold">B</button>
-    <button id="italic" >I</button>
-    <button id="underline">U</button>
-    <button id="h1">H!</button>
-    <button id="h2">H2</button>
-    <button id="quote">"</button>
-    <button id="sort">sort</button>
-    <button id="unsort">unsort</button>
+    <button onClick="(function(){
+      document.execCommand('bold',false,null);
+      alert('Hey i am calling'); 
+      return false;
+  })();return false;" type="button" id="bold">B</button>
+    <button type="button" id="italic" >I</button>
+    <button type="button" id="underline">U</button>
+    <button type="button" id="h1">H!</button>
+    <button type="button" id="h2">H2</button>
+    <button type="button" id="quote">"</button>
+    <button type="button" id="sort">sort</button>
+    <button type="button" id="unsort">unsort</button>
   </span>
 </div>
 <br>
@@ -45,23 +57,41 @@ if(less){
       setTimeout(() => {
           if(bess)
         {
-          console.log(bess,"Exists!");
+          console.log("Exists!");
           for(let j=0; j < bess.length; j++)
           {
+            // bess[j].insertAdjacentHTML("afterend", scrpt);
             bess[j].insertAdjacentHTML("afterend", html);
-          }
-
+             
+          } 
         }
-        if(document.getElementById('bold')){
-        document.getElementById('bold').addEventListener("click", () => {
-          document.execCommand('bold',false,null);
-          console.log("hello man")
-        })
-      }
       },2000)
     })
   }
+  
 }
+// function myTimer() {
+//   var bold = document.getElementById('bold');
+//   if(bold){
+//     document.getElementById('bold').addEventListener("click", () => {
+//       console.log("done");
+//       clearInterval(myVar);
+//       // document.execCommand('bold',false,null);
+//     })
+//   }else{
+//     console.log("no button discovered")
+//   }
+// }
+// const myVar = setInterval(myTimer,3000);
+
+
+
+// if(bold){
+//   bold.addEventListener("click", () => {
+//     console.log("Doing bold");
+//     document.execCommand('bold',false,null);
+//   })
+// }
 
 
 
