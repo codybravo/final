@@ -1,13 +1,36 @@
-$("body").arrive(`[aria-label="Post"]`, function (e) {
-  console.log("Create post is now opened");
+let html =
+  `
+<div class="wrapper">
+        <div class="btn bold">𝗕</div>
+        <div class="btn italic">𝑰</div>
+        <div class="btn underline">U̲</div>
+        <div class="btn strikeThrough">S̶</div>
+        <div class="btn cursive">𝓒</div> 
+        <div class="btn smallCaps">Sᴍᴀʟʟ</div> 
+        <div class="btn outline">𝔽</div> 
+        <div class="btn upsideDown">∩</div> 
+        <div class="btn yellow">Y</div> 
+        <div class="btn red">R</div> 
+        <div class="btn blue">B</div> 
+</div>    
+</div>
+`;
+$("body").arrive(`[aria-label="Emoji"]`, function (e) {
   $(e)
     .parent()
-    .append(
-      `<div class="make_it_bold" style="background: red; cursor: pointer;">𝗕OLD</div>
-      <div class="make_it_italic" style="background: red; cursor: pointer;">𝘐TALIC</div>
-      <div class="make_it_cursive" style="background: red; cursor: pointer;">𝒞URSIVE</div>`
-    );
+    .append(html)
 });
+
+// $("body").arrive(`[aria-label="Post"]`, function (e) {
+//   console.log("Create post is now opened");
+//   $(e)
+//     .parent()
+//     .append(
+//       `<div class="make_it_bold" style="background: red; cursor: pointer;">𝗕OLD</div>
+//       <div class="make_it_italic" style="background: red; cursor: pointer;">𝘐TALIC</div>
+//       <div class="make_it_cursive" style="background: red; cursor: pointer;">𝒞URSIVE</div>`
+//     );
+// });
 const all_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃"
 
 const normal_character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
@@ -211,17 +234,43 @@ function normalToCursive(norAlpha){
   }
 }
 
-$(document).on("click", ".make_it_bold", () => {
-  textFormatOption(0)
+$(document).on("click", ".bold", () => {
+  textFormatOption(0);
 });
 
-$(document).on("click", ".make_it_italic", () => {
+$(document).on("click", ".italic", () => {
   textFormatOption(1);
 });
-
-$(document).on("click", ".make_it_cursive", () => {
+$(document).on("click", ".cursive", () => {
   textFormatOption(2);
 });
+// $(document).on("click", ".strikeThrough", () => {
+//   textFormatOption(4);
+// });
+// $(document).on("click", ".upsideDown", () => {
+//   textFormatOption(5);
+// });
+// $(document).on("click", ".underline", () => {
+//   textFormatOption(6);
+// });
+// $(document).on("click", ".outline", () => {
+//   textFormatOption(7);
+// });
+// $(document).on("click", ".smallCaps", () => {
+//   textFormatOption(8);
+// });
+
+// $(document).on("click", ".make_it_bold", () => {
+//   textFormatOption(0)
+// });
+
+// $(document).on("click", ".make_it_italic", () => {
+//   textFormatOption(1);
+// });
+
+// $(document).on("click", ".make_it_cursive", () => {
+//   textFormatOption(2);
+// });
 
 function saveSelection() {
   if (window.getSelection) {
