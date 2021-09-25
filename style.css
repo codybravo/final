@@ -31,3 +31,8 @@
 .blue{
     background-color: blue;
 }
+
+::selection {
+    color: red;
+    background: yellow;
+  }

@@ -15,7 +15,7 @@ let html =
 </div>    
 </div>
 `;
-
+// injection of html
 $("body").arrive(`[aria-label="Emoji"]`, function (e) {
   $(e)
     .parent()
@@ -24,14 +24,12 @@ $("body").arrive(`[aria-label="Emoji"]`, function (e) {
 
 const all_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡𝟘ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟɴᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ"
 
-// A͟B͟C͟D͟E͟F͟G͟H͟I͟J͟K͟L͟M͟N͟O͟P͟Q͟R͟S͟T͟U͟V͟W͟X͟Y͟Z͟a͟b͟c͟d͟e͟f͟g͟h͟i͟j͟k͟l͟m͟n͟o͟p͟q͟r͟s͟t͟u͟v͟w͟x͟y͟z͟1͟2͟3͟4͟5͟6͟7͟8͟9͟0͟A̶B̶C̶D̶E̶F̶G̶H̶I̶J̶K̶L̶M̶N̶O̶P̶Q̶R̶S̶T̶U̶V̶W̶X̶Y̶Z̶a̶b̶c̶d̶e̶f̶g̶h̶i̶j̶k̶l̶m̶n̶o̶p̶q̶r̶s̶t̶u̶v̶w̶x̶y̶z̶1̶2̶3̶4̶5̶6̶7̶8̶9̶0̶ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟɴᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢZ⅄XMΛ∩⊥SᴚΌԀONW˥ʞſIH⅁ℲƎ◖Ɔ𐐒∀zʎxʍʌnʇsɹbdouɯulʞɾıɥƃɟǝpɔqɐ
 
 const normal_character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 const normal_character_array = [...normal_character]
 
+// Button Click will perform following function.
 const textFormatOption = (type) => {
-  console.log("here clicked");
-  console.log("dfgdfg", selectedObj,selectedObj.toString());
   restoreSelection(selectedObj);
   console.log("dan1", selectedObj,selectedObj.toString());
   if ($(`[aria-label="Post"]`).length) {
@@ -41,41 +39,37 @@ const textFormatOption = (type) => {
       var reformatedText
       console.log(stringSelected)
       reformatedText = ""
+      // Conversion of text
       switch(type) {
         case 0:
-          for (let i=0; i < tempArray.length; i++){
-            reformatedText += normalToSpecial(specialToNormal([...all_characters],tempArray[i],type),120211,120205,120764);
-          }
+          reformatedText = buttonTrigger([...all_characters],[...stringSelected],type,120211,120205,120764)
           break;
         case 1:
-          for (let i=0; i < tempArray.length; i++){
-            reformatedText += normalToSpecial(specialToNormal([...all_characters],tempArray[i],type),120263,120257,0);
-          }
+          reformatedText = buttonTrigger([...all_characters],[...stringSelected],type,120263,120257,0)
           break;
         case 2:
-          reformatedText = strikeThrough(tempArray,818);
+          reformatedText = strikeThrough(tempArray,818); // Underline
           break;
         case 3:
-          reformatedText = strikeThrough(tempArray,822);
+          reformatedText = strikeThrough(tempArray,822); // Strike Through
           break;
         case 4:
-          for (let i=0; i < tempArray.length; i++){
-            reformatedText += normalToSpecial(specialToNormal([...all_characters],tempArray[i],type),119951,119945,0);
-          }
+          reformatedText = buttonTrigger([...all_characters],[...stringSelected],type,119951,119945,0)
           break;
-          case 5:
-            for (let i=0; i < tempArray.length; i++){
-              reformatedText += normalToSpecial(specialToNormal([...all_characters],tempArray[i],type),120055,120049,120744);
-            }
+        case 5:
+            reformatedText = buttonTrigger([...all_characters],[...stringSelected],type,120055,120049,120744)
+            break;
+        case 6:
+            reformatedText = buttonTrigger([...all_characters],[...stringSelected],type,7359,0,0)
             break;  
         default:
           for (let i=0; i < tempArray.length; i++){
             reformatedText += specialToNormal([...all_characters],tempArray[i],type);
           }    
       }
-      
       console.log(reformatedText,"reformation done");
-
+      
+      // Replacing the selected text with desired text
       const blob = new Blob([reformatedText], {
         type: "text/plain",
       });
@@ -102,11 +96,20 @@ const textFormatOption = (type) => {
   }
 };
 
+// Triggerin the button will call the required function
+function buttonTrigger(characterlist,templist,type,diff1,diff2,diff3){
+    var ntstext = "" ;
+    for (let i=0; i < templist.length; i++){
+        ntstext += normalToSpecial(specialToNormal(characterlist,templist[i],type),diff1,diff2,diff3);
+      }
+    return ntstext
+}
+
+// It will Convert the Styled text or normal text to its normal counterpart except the style which is clicked for example if a bold button is clicked then it will replace all styled or non styled character to its normal counterpart but will do nothing to any bold character
 function specialToNormal(inputArray,element,type) {
   let diff;
   let alphabet = "";
   let alpha_index = "";
-  // var diffAlpha = `String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff)`;
   if(inputArray.includes(element)){
     alpha_index = inputArray.indexOf(element);
     
@@ -197,6 +200,15 @@ function specialToNormal(inputArray,element,type) {
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
       return alphabet    
+      // Small Capital to normal
+    }else if(alpha_index >= 290 && alpha_index < 316){
+      if(type === 6){
+        diff = 0;
+      }else{
+        diff = 7359;
+      }
+      alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
+      return alphabet    
     }
   }else{
     alphabet = element
@@ -204,6 +216,7 @@ function specialToNormal(inputArray,element,type) {
   }
 }
  
+// it will convert all the special character to STyled one
 function normalToSpecial(norAlpha,diff1,diff2,diff3){
   let alphabet = "";
   let alpha_index = "";
@@ -224,7 +237,7 @@ function normalToSpecial(norAlpha,diff1,diff2,diff3){
   }
 }
 
-
+// For Underline and Strike Through
 function strikeThrough(text,charCode){
   var iterator = 0;
   while(iterator < text.length){
@@ -245,8 +258,7 @@ function strikeThrough(text,charCode){
   return ntext
 }
 
-
-
+// Triggering the button
 $(document).on("click", ".bold", () => {
   textFormatOption(0);
 });
@@ -265,25 +277,11 @@ $(document).on("click", ".cursive", () => {
 $(document).on("click", ".outline", () => {
   textFormatOption(5);
 });
-// $(document).on("click", ".smallCaps", () => {
-//   textFormatOption(6);
-// });
-// $(document).on("click", ".upsideDown", () => {
-//   textFormatOption(5);
-// });
+$(document).on("click", ".smallCaps", () => {
+  textFormatOption(6);
+});
 
-// $(document).on("click", ".make_it_bold", () => {
-//   textFormatOption(0)
-// });
-
-// $(document).on("click", ".make_it_italic", () => {
-//   textFormatOption(1);
-// });
-
-// $(document).on("click", ".make_it_cursive", () => {
-//   textFormatOption(2);
-// });
-
+//  Function to save selection
 function saveSelection() {
   if (window.getSelection) {
     sel = window.getSelection();
@@ -296,6 +294,7 @@ function saveSelection() {
   return null;
 }
 
+// Before pasting it will make sure the latest Selection
 function restoreSelection(range) {
   if (range) {
     if (window.getSelection) {
@@ -310,6 +309,7 @@ function restoreSelection(range) {
 
 var selectedObj = "";
 
+// It will Monitor selection change if there is any then save it.
 $(document).on("selectionchange", function (e) {
   
   if ($(`[aria-label="Post"]`).length) {
@@ -317,9 +317,9 @@ $(document).on("selectionchange", function (e) {
     {
       if(document.getSelection().toString().length !== 0 && document.getSelection().toString() !="" ) 
       {
-        document.getElementsByClassName("wrapper")[0].style.visibility = "visible";
+        document.querySelector(".wrapper").style.visibility = "visible";
       }else {
-        document.getElementsByClassName("wrapper")[0].style.visibility = "hidden";
+        document.querySelector(".wrapper").style.visibility = "hidden";
       }
     }
     var stringSelected = window.getSelection().toString();
