@@ -8,10 +8,7 @@ let html =
         <div class="btn cursive">𝓒</div>
         <div class="btn outline">𝔽</div>  
         <div class="btn smallCaps">Sᴍᴀʟʟ</div> 
-        <div class="btn upsideDown">∩</div> 
-        <div class="btn yellow">Y</div> 
-        <div class="btn red">R</div> 
-        <div class="btn blue">B</div> 
+        <div class="btn upsideDown">∩</div>  
 </div>    
 </div>
 `;
@@ -180,7 +177,7 @@ function specialToNormal(inputArray,element,type) {
       if(type === 5){
         diff = 0;
       }else{
-        diff = 120055;
+          diff = 120055;
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
       return alphabet    
