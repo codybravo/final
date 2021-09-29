@@ -19,11 +19,13 @@ $("body").arrive(`[aria-label="Emoji"]`, function (e) {
     .append(html)
 });
 
-const all_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡𝟘ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟɴᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ"
+ const all_characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890𝗔𝗕𝗖𝗗𝗘𝗙𝗚𝗛𝗜𝗝𝗞𝗟𝗠𝗡𝗢𝗣𝗤𝗥𝗦𝗧𝗨𝗩𝗪𝗫𝗬𝗭𝗮𝗯𝗰𝗱𝗲𝗳𝗴𝗵𝗶𝗷𝗸𝗹𝗺𝗻𝗼𝗽𝗾𝗿𝘀𝘁𝘂𝘃𝘄𝘅𝘆𝘇𝟭𝟮𝟯𝟰𝟱𝟲𝟳𝟴𝟵𝟬𝘈𝘉𝘊𝘋𝘌𝘍𝘎𝘏𝘐𝘑𝘒𝘓𝘔𝘕𝘖𝘗𝘘𝘙𝘚𝘛𝘜𝘝𝘞𝘟𝘠𝘡𝘢𝘣𝘤𝘥𝘦𝘧𝘨𝘩𝘪𝘫𝘬𝘭𝘮𝘯𝘰𝘱𝘲𝘳𝘴𝘵𝘶𝘷𝘸𝘹𝘺𝘻𝓐𝓑𝓒𝓓𝓔𝓕𝓖𝓗𝓘𝓙𝓚𝓛𝓜𝓝𝓞𝓟𝓠𝓡𝓢𝓣𝓤𝓥𝓦𝓧𝓨𝓩𝓪𝓫𝓬𝓭𝓮𝓯𝓰𝓱𝓲𝓳𝓴𝓵𝓶𝓷𝓸𝓹𝓺𝓻𝓼𝓽𝓾𝓿𝔀𝔁𝔂𝔃𝔸𝔹ℂ𝔻𝔼𝔽𝔾ℍ𝕀𝕁𝕂𝕃𝕄ℕ𝕆ℙℚℝ𝕊𝕋𝕌𝕍𝕎𝕏𝕐ℤ𝕒𝕓𝕔𝕕𝕖𝕗𝕘𝕙𝕚𝕛𝕜𝕝𝕞𝕟𝕠𝕡𝕢𝕣𝕤𝕥𝕦𝕧𝕨𝕩𝕪𝕫𝟙𝟚𝟛𝟜𝟝𝟞𝟟𝟠𝟡𝟘ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘǫʀsᴛᴜᴠᴡxʏᴢ𝘼𝘽𝘾𝘿𝙀𝙁𝙂𝙃𝙄𝙅𝙆𝙇𝙈𝙉𝙊𝙋𝙌𝙍𝙎𝙏𝙐𝙑𝙒𝙓𝙔𝙕𝙖𝙗𝙘𝙙𝙚𝙛𝙜𝙝𝙞𝙟𝙠𝙡𝙢𝙣𝙤𝙥𝙦𝙧𝙨𝙩𝙪𝙫𝙬𝙭𝙮𝙯"
 
 
 const normal_character = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 const normal_character_array = [...normal_character]
+
+const all_characters_array = [...all_characters]
 
 // Button Click will perform following function.
 const textFormatOption = (type) => {
@@ -97,7 +99,7 @@ const textFormatOption = (type) => {
 function buttonTrigger(characterlist,templist,type,diff1,diff2,diff3){
     var ntstext = "" ;
     for (let i=0; i < templist.length; i++){
-        ntstext += normalToSpecial(specialToNormal(characterlist,templist[i],type),diff1,diff2,diff3);
+        ntstext += normalToSpecial(specialToNormal(characterlist,templist[i],type),diff1,diff2,diff3,type);
       }
     return ntstext
 }
@@ -115,17 +117,26 @@ function specialToNormal(inputArray,element,type) {
       return alphabet
       // converting Bold to Normal
     }else if (alpha_index >= 62 && alpha_index < 88){
-      if(type === 0){
+      if(type === 0 || type === 1){
         diff = 0;
-      }else{
+      }
+      // else if(type === 1){
+      //   diff = 120315
+      // }
+      else{
         diff = 120211
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
+      console.log(type,alphabet)
       return alphabet
     }else if(alpha_index >= 88 && alpha_index < 114){
-      if(type === 0){
+      if(type === 0 || type === 1){
         diff = 0;
-      }else{
+      }
+      // else if(type === 1){
+      //   diff = 120309
+      // }
+      else{
         diff = 120205
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
@@ -140,17 +151,25 @@ function specialToNormal(inputArray,element,type) {
       return alphabet
       // converting Italic to Normal
     }else if(alpha_index >= 124 && alpha_index < 150){
-      if(type === 1){
+      if(type === 1 || type === 0){
         diff = 0;
-      }else{
+      }
+      // else if(type === 0){
+      //   diff = 120315
+      // }
+      else{
         diff = 120263;
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
       return alphabet
     }else if(alpha_index >= 150 && alpha_index < 176){
-      if(type === 1){
+      if(type === 1 || type === 0){
         diff = 0;
-      }else{
+      }
+      // else if(type === 0){
+      //   diff = 120315
+      // }
+      else{
         diff = 120257;
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
@@ -206,6 +225,22 @@ function specialToNormal(inputArray,element,type) {
       }
       alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
       return alphabet    
+    }else if(alpha_index >= 316 && alpha_index < 342){
+      if(type !== 0 && type !== 1){
+        diff = 120315;
+      }else{
+        diff = 0;
+      }
+      alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
+      return alphabet    
+    }else if(alpha_index >= 342 && alpha_index < 368){
+      if(type !== 0 && type !== 1){
+        diff = 120309;
+      }else{
+        diff = 0;
+      }
+      alphabet = String.fromCodePoint(inputArray[alpha_index].codePointAt(0) - diff);
+      return alphabet    
     }
   }else{
     alphabet = element
@@ -214,23 +249,39 @@ function specialToNormal(inputArray,element,type) {
 }
  
 // it will convert all the special character to STyled one
-function normalToSpecial(norAlpha,diff1,diff2,diff3){
+function normalToSpecial(norAlpha,diff1,diff2,diff3,type){
   let alphabet = "";
   let alpha_index = "";
-  if(normal_character_array.includes(norAlpha)){
-    alpha_index = normal_character_array.indexOf(norAlpha);
-    if(alpha_index < 26){
-      let alphabet = String.fromCodePoint(norAlpha.codePointAt(0) + diff1);
-      return alphabet
-    }else if(alpha_index >= 26 && alpha_index < 52){
-      alphabet = String.fromCodePoint(norAlpha.codePointAt(0) + diff2);
-      return alphabet
-    }else if(alpha_index >= 52 && alpha_index < 62){
-      alphabet = String.fromCodePoint(norAlpha.codePointAt(0) + diff3);
-      return alphabet
+  var char_index = all_characters_array.indexOf(norAlpha);
+  //   alpha_index = normal_character_array.indexOf(norAlpha);
+  if(all_characters_array.includes(norAlpha)){
+    if(char_index < 26){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + diff1);
+    }else if(char_index >= 26 && char_index < 52){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + diff2);
+    }else if(char_index >= 52 && char_index < 62){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + diff3);
+    }else if(char_index >= 62 && char_index < 88 && type === 1){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + 104);
+    }else if(char_index >= 88 && char_index < 114 && type === 1){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + 104);
+    }else if(char_index >= 124 && char_index < 150 && type === 0){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + 52);
+    }else if(char_index >= 150 && char_index < 176 && type === 0){
+      return String.fromCodePoint(norAlpha.codePointAt(0) + 52);
+    }else if(char_index >= 316 && char_index < 342 && type === 1){
+      return String.fromCodePoint(norAlpha.codePointAt(0) - 104);
+    }else if(char_index >= 342 && char_index < 368 && type === 1){
+      return String.fromCodePoint(norAlpha.codePointAt(0) - 104);
+    }else if(char_index >= 316 && char_index < 342 && type === 0){
+      return String.fromCodePoint(norAlpha.codePointAt(0) - 52);
+    }else if(char_index >= 342 && char_index < 368 && type === 0){
+      return String.fromCodePoint(norAlpha.codePointAt(0) - 52);
+    }else{
+      return specialToNormal(all_characters_array,norAlpha,9)
     }
   }else{
-    return specialToNormal([...all_characters],norAlpha,9)
+    return specialToNormal(all_characters_array,norAlpha,9)
   }
 }
 
