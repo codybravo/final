@@ -1,0 +1,35 @@
+{
+    "name": "Final Extension",
+    "description": "Facebook text styler!",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": ["storage","notifications","tabs","activeTab","alarms","scripting"],
+    "action": {
+      "default_icon": {
+        "16": "/images/danish1.png",
+        "32": "/images/danish2.png",
+        "48": "/images/danish3.png",
+        "128": "/images/danish4.png"
+      }
+    },
+    "icons": {
+      "16": "/images/danish1.png",
+      "32": "/images/danish2.png",
+      "48": "/images/danish3.png",
+      "128": "/images/danish4.png"
+    },
+  
+    "content_scripts": [ 
+      {
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js": ["arrive.js","jquery-3.1.0.min.js","content.js","inject.js"],
+      "css": ["inject.css"]
+      }
+    ],
+    
+    "web_accessible_resources": [{
+      "resources": ["/images/*"],
+      "matches": ["http://*/*", "https://*/*"]
+    }]
+}
